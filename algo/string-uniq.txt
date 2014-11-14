@@ -1,0 +1,12 @@
+Determine if a string has all unique characters?
+1. accept the string input as s
+
+Solution 1:
+- Create an array a of 256 elements
+- Initialize all elements to 0
+- For each character c in s, 
+	if a[c] == 0, a[c] =1
+	if a[c] == 1, string has repeating characters, break
+
+
+Solution 2: No data structures?
