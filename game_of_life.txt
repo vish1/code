@@ -1,0 +1,33 @@
+(from CSI Programming contest)
+
+John Conway created what we call the computer game of `Life'. It once was just thought as a computer science curiosity, without real applications. But Quantum physics is stranger than physicists once believed. IT DOES follow Conway's laws, vindicating the mathematician after many years. Your task is to take a quantum phase space diagram, and put it through a specified number of generations. To remind you, here are Conway's laws.
+
+
+Law of Stability 
+If a particle has either two or three neighbours, it is stable. 
+Law of Annihilation 
+A particle with more than three neighbours or less than two neighbours annihilates itself. 
+Law of Creation 
+An empty spot with exactly three neighbours creates a new particle in the next generation. 
+
+Input Specs
+The input will consist of the following :
+A number, representing the number of generations to do. 
+A number, which is the width of the board. 
+A number, which is the height of the board. 
+A series of lines composed of `.'s and `x's. The `x's are particles. 
+
+Output Specs
+The final quantum phase space in standard form.
+
+Sample Input
+18 12 10 ...x........ .x.x........ ..xx........ ............ ............ ............ ............ ....................................
+
+Sample Output
+.......................................................x............x.........xxx.......................................
+
+
+
+
+
+

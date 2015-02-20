@@ -1,0 +1,20 @@
+(from CSI Programming contest)
+
+You know what a factorial is? Well, all you've to do is find it. 
+Write a program to compute the factorial of a LARGE number, assume that the maximum number of digits in the output is 100.
+
+Input Specs
+Each line shall contain a positive integer for which you must compute a factorial. A line with a single zero indicates end of input.
+
+Output Specs
+Output the factorial for each input, each on its own line.
+
+Sample Input
+5
+20
+0
+
+Sample Output
+120
+2432902008176640000
+

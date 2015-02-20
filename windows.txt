@@ -1,0 +1,35 @@
+(from CSI Programming contest)
+
+A common operation in graphical environments is the handling of overlapping windows. For efficiency concerns, only the exposed portions of a window are displayed, with special routines written to determine what portions of a window are exposed, and should be dealt with. 
+Your task is to take a list of windows, do the appropriate manipulations, and, upon request, indicate the exposed area of a given window. 
+
+The input will be a series of instructions in the following format: 
+
+w(I,X,Y,x,y)t(I)b(I)a(I)d
+where I is a windows id, X and Y are the upper left-hand coordinates of the window, and x and y are the lower right-hand coordinates of the window. 
+The `w' command creates a window with the appropriate id, size and location. A newly created window is created on top of all existing windows. 
+
+The `t' command brings the indicated window above all other windows. 
+
+The `b' command brings the indicated window below all other windows. 
+
+The `a' command calculates the indicated window's exposed area to be printed as a single integer number followed by a newline. 
+
+The `d' command indicates the end of input
+
+The output will simply be the responses to the `a' commands. 
+
+Sample Input
+
+Input: 					Represents:w(a,10,10,30,30)                        aaaa  bbbbw(b,40,10,60,30) 			aaaa  bbbbw(c,20,20,50,40) 			aaaaccbbbbt(a) 					aaaaccbbbbb(c)                                      cccccc a(a)					  cccccca(b)					a(c) d
+
+Sample Output 
+      
+Output:		
+400
+400
+400
+
+
+
+

@@ -1,0 +1,26 @@
+(from CSI Programming contest)
+
+In a computer network users are connected to special computers called routers, and routers are also connected to each other. For one computer to talk to another computer it sends messages to a router and then through routers until the message is received by a router that is connected to the destination computer. An important problem in computer networks is finding the shortest path between two computers that want to communicate. 
+
+In our computer network, links are unidirectional. If there is a link from router 1 to router 2, it is not possible to go from 2 to 1 unless there is a specific path from 2 to 1. A path between two computers may only pass through routers, not other (third party) computers. 
+
+Write a program to figure out the shortest route through a computer network. For each routing request find and print the shortest route to the destination (if a route exists). The shortest route is the path traveling through the fewest number of routers. 
+
+Input Specs
+
+The input file will consist of two parts. 
+A description of a collection of hosts, routers, and how they are connected. 
+A series of pairs of computers that wish to communicate. 
+In the first part of the file, each line will define a link between either a computer or a router. The format is a letter (r for router and c for computer) followed by the number of the router or computer, and then one or more nodes to which the computer or router is attached. Routers and computers will be assigned distinct numbers. You may assume that there will be no more than 75 nodes (routers plus hosts) in the network. The first part of the input ends with a line containing an ``r -1". The second part consists of lines containing two integers each, where the pair xy means that machine x wants to send a message to machine y. A line containing two -1's indicates end of input. 
+
+Output Specs
+
+If a route exists between the two nodes, then you should output the starting node, each intermediate node, and the destination on a single line. If no route exists, then you should print a line of the form "no route from node x to y". If either the source or the destination does not exist, you should print an error message of the form "no node x". 
+
+Sample Input
+
+r 1 2 3 4c 2 1c 3 1r 4 1c 5 4c 6 4r 8 9r 9 8c 10 8r -17 110 13 25 2-1 -1
+
+Sample Output
+no node 7no route from node 10 to 13 1 2 5 4 1 2 
+
