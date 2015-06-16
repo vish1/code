@@ -24,6 +24,21 @@ circles = [Circle(random()) for i in xrange(n)]
 areas = [c.area() for c in circles]
 average_area = sum(areas) / n
 print 'The average area is %.1f' % average_area
+print
+
+## Rubber Sheet #######
+
+print 'Rubber sheet cut template spec sheet'
+cut_template = [0.1, 0.2, 0.7]
+print 'Template:', cut_template
+circles = [Circle(cut_radius) for cut_radius in cut_template]
+for circle in circles:
+    print 'A rubber circle with a cut radius of', circle.radius
+    print 'has a perimeter of', circle.perimeter()
+    print 'and a cold area of', circle.area()
+    circle.radius *= 1.1
+    print 'and a warm area of', circle.area()
+    print 
 
 
 
