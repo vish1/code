@@ -12,7 +12,7 @@ class Circle(object):
         Part of an advanced circle analytics toolkit
     '''
 
-    version = Version(0, 4)
+    version = Version(0, 5)
 
     def __init__(self, radius):            # the docstring for the class is shown not the __init__
         self.radius = radius
@@ -33,3 +33,10 @@ class Circle(object):
         return math.tan(math.radians(angle)) * 100
 
     angle_to_grade = staticmethod(angle_to_grade)   # reprograms the dot to NOT add self as the first argument
+
+    def from_bbd(cls, bbd):
+        'Make a new circle from the bounding box diagonal'
+        radius = bbd / math.sqrt(2.0) / 2.0
+        return cls(radius)
+
+    from_bbd = classmethod(from_bbd)
