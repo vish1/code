@@ -40,6 +40,29 @@ for circle in circles:
     print 'and a warm area of', circle.area()
     print 
 
+## National Tire Change ######
 
+class Tire(Circle):
+    'A variant of a circle that tracks inner radius and area, but outer perimeter'
+
+    RUBBER_RATIO = 1.25
+
+    def perimeter(self):
+        'Odometer correct perimeter that accounts for the rubber on tire'
+        # Overriding -- don't call the parent method
+        # Extending -- call the parent method and then modify it's result
+        return Circle.perimeter(self) * self.RUBBER_RATIO
+
+t = Tire(30)
+print 'A tire with an inner radius of', t.radius
+print 'and inner area of', t.area()
+print 'and an outer perimeter of', t.perimeter()
+print
+
+## National Trucking Company #####
+
+print u'A 5\N{DEGREE SIGN} degree inclinometer reading',
+print 'is %.1f%% grade' % Circle.angle_to_grade(5)
+print 
 
 
