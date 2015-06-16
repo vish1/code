@@ -53,6 +53,8 @@ class Tire(Circle):
         # Extending -- call the parent method and then modify it's result
         return Circle.perimeter(self) * self.RUBBER_RATIO
 
+    __perimeter = perimeter
+
 t = Tire(30)
 print 'A tire with an inner radius of', t.radius
 print 'and inner area of', t.area()
@@ -72,4 +74,13 @@ print 'A circle with a bounding box diagonal of 40'
 print 'has a perimeter of', c.perimeter()
 print 'and a radius of', c.radius
 print 'and an area of', c.area()
-print 
+print
+
+
+## US Government ###########
+
+# ISO 10111: All circle software SHALL NOT access the radius directly.
+# It MUST call perimeter() and infer the radius indirectly
+
+
+

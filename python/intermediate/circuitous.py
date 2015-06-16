@@ -12,18 +12,22 @@ class Circle(object):
         Part of an advanced circle analytics toolkit
     '''
 
-    version = Version(0, 5)
+    version = Version(0, 6)
 
     def __init__(self, radius):            # the docstring for the class is shown not the __init__
         self.radius = radius
 
     def area(self):
         'Compute area for circle'
-        return math.pi * (self.radius ** 2.0)
+        p = self.__perimeter()
+        radius = p / 2.0 / math.pi
+        return math.pi * (radius ** 2.0)
 
     def perimeter(self):
         'Compute the circumference for circle'
         return math.pi * self.radius * 2.0
+
+    __perimeter = perimeter
 
     def __repr__(self):
         return '%s(%r)' % (self.__class__.__name__, self.radius)
@@ -39,4 +43,4 @@ class Circle(object):
         radius = bbd / math.sqrt(2.0) / 2.0
         return cls(radius)
 
-    from_bbd = classmethod(from_bbd)
+    from_bbd = classmethod(from_bbd)                # Reprograms the dot to add cls as the first argument
