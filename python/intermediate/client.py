@@ -82,5 +82,7 @@ print
 # ISO 10111: All circle software SHALL NOT access the radius directly.
 # It MUST call perimeter() and infer the radius indirectly
 
+# ISO 10112: No circle software shall store the radius. It must store the diameter and only the diameter.
+
 
 

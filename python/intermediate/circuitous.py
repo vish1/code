@@ -44,3 +44,11 @@ class Circle(object):
         return cls(radius)
 
     from_bbd = classmethod(from_bbd)                # Reprograms the dot to add cls as the first argument
+
+    def get_radius(self):
+        return self.diameter / 2.0
+
+    def set_radius(self, radius):
+        self.diameter = radius * 2.0
+
+    radius = property(get_radius, set_radius)
