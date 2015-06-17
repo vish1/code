@@ -13,7 +13,7 @@ class Circle(object):
     '''
 
     __slots__ = ['diameter']
-    version = Version(0, 9)
+    version = Version(0, 10)
 
     def __init__(self, radius):            # the docstring for the class is shown not the __init__
         self.radius = radius
@@ -32,24 +32,22 @@ class Circle(object):
 
     def __repr__(self):
         return '%s(%r)' % (self.__class__.__name__, self.radius)
-   
+
+    @staticmethod
     def angle_to_grade(angle):                      # Use case: to improve findability
         'Convert an inclinometer reading in degrees into a percent grade'
         return math.tan(math.radians(angle)) * 100
 
-    angle_to_grade = staticmethod(angle_to_grade)   # reprograms the dot to NOT add self as the first argument
-
-    def from_bbd(cls, bbd):
+    @classmethod
+    def from_bbd(cls, bbd):                         # Reprograms the dot to add cls as the first argument
         'Make a new circle from the bounding box diagonal'
         radius = bbd / math.sqrt(2.0) / 2.0
-        return cls(radius)
+        return cls(radius)               
 
-    from_bbd = classmethod(from_bbd)                # Reprograms the dot to add cls as the first argument
-
-    def get_radius(self):
+    @property
+    def radius(self):
         return self.diameter / 2.0
 
-    def set_radius(self, radius):
+    @radius.setter
+    def radius(self, radius):
         self.diameter = radius * 2.0
-
-    radius = property(get_radius, set_radius)       # Reprograms the dot to convert attribute c
