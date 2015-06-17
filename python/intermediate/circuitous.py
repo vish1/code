@@ -12,7 +12,8 @@ class Circle(object):
         Part of an advanced circle analytics toolkit
     '''
 
-    version = Version(0, 6)
+    __slots__ = ['diameter']
+    version = Version(0, 9)
 
     def __init__(self, radius):            # the docstring for the class is shown not the __init__
         self.radius = radius
@@ -51,4 +52,4 @@ class Circle(object):
     def set_radius(self, radius):
         self.diameter = radius * 2.0
 
-    radius = property(get_radius, set_radius)
+    radius = property(get_radius, set_radius)       # Reprograms the dot to convert attribute c
