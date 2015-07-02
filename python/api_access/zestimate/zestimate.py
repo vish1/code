@@ -3,13 +3,15 @@
 import urllib2, locale, time, functools
 import xml.etree.ElementTree as ET
 
+from contextlib import closing
+
 def get_zestimate(zpid):
     with open('secrets') as f: ACCESS_TOKEN = f.read().strip()
 
     url = 'http://www.zillow.com/webservice/GetZestimate.htm?zws-id=%s&zpid=%s' % (ACCESS_TOKEN, zpid)
-    value = 0
+    with closing(urllib2.urlopen(url)) as url_f: response = url_f.read()
 
-    response = urllib2.urlopen(url).read()
+    value = 0
     e = ET.fromstring(response)
     for elem in e.findall('response'):
         for zestimate in elem.findall('zestimate'):
