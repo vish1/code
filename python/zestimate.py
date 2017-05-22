@@ -22,7 +22,7 @@ if __name__ == '__main__':
     with open(os.path.join(zillow_dir, 'zillow-api-key')) as f: ACCESS_TOKEN = f.read().strip()
 
     print "For today's date ", time.strftime("%m/%d/%Y")
-    with open(os.path.join(zillow_dir, 'friends-data')) as data: houses = dict([line.strip().split(':') for line in data])
-    values = sorted([(name, get_zestimate(zpid, ACCESS_TOKEN)) for (name, zpid) in houses.items()], key=lambda tup: tup[1])
-    for (name, value) in values:
-        print "Zestimate for %20s's house is: %15s" % (name, "Renting" if value == 0 else locale.currency(value, grouping=True))
+    with open(os.path.join(zillow_dir, 'friends-data')) as data: houses = dict((a, (b,c,d)) for a,b,c,d  in [line.strip().split(':') for line in data])
+    values = sorted([(name, get_zestimate(zpid, ACCESS_TOKEN), sold_price, year) for (name, (zpid, sold_price, year)) in houses.items()], key=lambda tup: tup[1])
+    for (name, value, sold_price, year) in values:
+        print "Zestimate for %20s's house is: %15s, bought for: %15s, increased %15s in %d years" % (name, "Renting" if value == 0 else locale.currency(value, grouping=True), locale.currency(int(sold_price), grouping=True), locale.currency(int(value)-int(sold_price), grouping=True), 2017 - int(year))

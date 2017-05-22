@@ -1,0 +1,12 @@
+Steps to run python script. 
+
+1. Download python script. 
+2. Install xlrd
+	a. Download xlrd (http://pypi.python.org/pypi/xlrd)
+	b. Run setup.py with --prefix=(home directory/another directory)
+3. Set PYTHONPATH prefix to (home directory/another directory) 
+4. Run program as
+	python Access-Excel.py <ACE-POD-number>
+
+
+
