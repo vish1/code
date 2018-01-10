@@ -5,7 +5,7 @@ def quicksort(input, lo, hi):
     if lo < hi:
         pivot, i = input[hi], lo;
         for j in range(lo, hi):
-            if input[j] > pivot:
+            if input[j] < pivot:
                 input[i], input[j] = input[j], input[i]
                 i = i+1
         input[hi], input[i] = input[i], input[hi]
